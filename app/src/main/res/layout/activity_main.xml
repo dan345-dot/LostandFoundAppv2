@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D07B7B"
+    android:backgroundTint="#AACDED"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/LFText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="680dp"
+        android:text="Lost and Found App"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AdvertButton"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="27dp"
+        android:backgroundTint="#2196F3"
+        android:onClick="jumpClick"
+        android:text="Create A New Advert"
+        android:textColorLink="#BD2F2F"
+        app:layout_constraintBottom_toTopOf="@+id/LostFoundButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LFText" />
+
+    <Button
+        android:id="@+id/LostFoundButton"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="367dp"
+        android:backgroundTint="#FF5722"
+        android:onClick="showClick"
+        android:text="Show all Lost and Found Items"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AdvertButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
