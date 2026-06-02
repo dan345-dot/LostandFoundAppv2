@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +21,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.w3c.dom.Text;
+
 import java.net.DatagramPacket;
+import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class CreateANewAdvert extends AppCompatActivity {
 
@@ -31,6 +38,12 @@ public class CreateANewAdvert extends AppCompatActivity {
     public void backClick(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickClick (View view)
+    {
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
@@ -45,6 +58,9 @@ public class CreateANewAdvert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_create_anew_advert);
+        TextView timedate = findViewById(R.id.DateTime);
+        Date cr= Calendar.getInstance().getTime();
+        timedate.setText(cr.toString());
 
         AddImageButton = findViewById(R.id.AddImageButton);
         imageView = findViewById(R.id.imageView);
@@ -58,21 +74,20 @@ public class CreateANewAdvert extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
     }
-
     private void addimage(){
         Intent intent = new Intent(MediaStore.ACTION_PICK_IMAGES);
         resultLauncher.launch(intent);
     }
+
+
 
     private void registerResult(){
         resultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
                     @Override
-                    public void onActivityResult(ActivityResult o) {
+                    public void onActivityResult(ActivityResult result) {
                       try{
                           Uri imageUri = result.getData().getData();
                           imageView.setImageURI(imageUri);

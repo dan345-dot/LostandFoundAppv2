@@ -21,7 +21,6 @@ public class ShowAllLostAndFoundItems extends AppCompatActivity {
     ListView ItemView;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
-    private String filterSelected = "Electronics";
     public Button Electronics;
     public Button Pets;
     public Button Wallets;
@@ -36,12 +35,6 @@ public class ShowAllLostAndFoundItems extends AppCompatActivity {
     {
      Intent intent = new Intent(this, CreateANewAdvert.class);
      startActivity(intent);
-    }
-    private void listfiltered(String status )
-    {
-        filterSelected = status;
-        ArrayList<Items> filteredItems = new ArrayList<>(Items)();
-
     }
 
     @Override

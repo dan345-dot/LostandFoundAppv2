@@ -18,6 +18,13 @@ public void jumpClick (View view)
     Intent intent = new Intent(this, CreateANewAdvert.class);
     startActivity(intent);
 }
+
+public void clickClick (View view)
+{
+    Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+}
+
 public void showClick(View view)
 {
     Intent intent = new Intent(this, ShowAllLostAndFoundItems.class);
@@ -29,7 +36,6 @@ public void showClick(View view)
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.ItemListView);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
