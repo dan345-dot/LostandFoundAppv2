@@ -62,11 +62,14 @@ public class CreateANewAdvert extends AppCompatActivity {
         Date cr= Calendar.getInstance().getTime();
         timedate.setText(cr.toString());
 
+
         AddImageButton = findViewById(R.id.AddImageButton);
         imageView = findViewById(R.id.imageView);
         registerResult();
 
+
         AddImageButton.setOnClickListener(view -> addimage());
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

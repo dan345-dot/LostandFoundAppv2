@@ -21,7 +21,7 @@ public void jumpClick (View view)
 
 public void clickClick (View view)
 {
-    Intent intent = new Intent(this, MainActivity.class);
+    Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
 }
 
